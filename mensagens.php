@@ -3,7 +3,7 @@
 
 	require_once('conexao.php');
 
-	if(isset($_POST['nome']) && $_POST['nome'] != ""){
+	if(isset($_POST['n_da_porta']) && $_POST['n_da_porta'] != ""){
 
 		$n_da_porta = $_POST['n_da_porta'];
 		$tp_quarto = $_POST['tp_quarto'];
@@ -11,7 +11,7 @@
 		$status = $_POST['status'];
 		$id_do_quarto = $_POST['id_do_quarto'];
 
-		if($id == ""){
+		if($id_do_quarto == ""){
 			$sql = "insert into quartos (n_da_porta, tp_quarto, vr_diaria, status, id_do_quarto)
 				values ('$n_da_porta', '$tp_quarto', '$vr_diaria', '$status', '$id_do_quarto', now(), '')
 			";
@@ -22,10 +22,10 @@
 		
 		$resultado = mysqli_query($conexao, $sql);
 
-		if ($resultado && $id==""){
+		if ($resultado && $id_do_quarto==""){
 			$_GET['msg'] = 'Dados inseridos com sucesso';
 			$_POST = null;
-		}elseif($resultado && $id!=""){
+		}elseif($resultado && $id_do_quarto!=""){
 			$_GET['msg'] = 'Dados alterados com sucesso';
 			$_POST = null;
 		}elseif(!$resultado){

@@ -8,8 +8,8 @@ $vr_diaria = '';
 $status = '';
 $id_do_quarto = '';
 
-if(isset($_GET['id']) && $_GET['id'] != ""){
-	$sql = "select * from quartos where id = " . $_GET['id'];
+if(isset($_GET['id_do_quarto']) && $_GET['id_do_quarto'] != ""){
+	$sql = "select * from quartos where id = " . $_GET['id_do_quarto'];
     $resultado = mysqli_query($conexao, $sql);
 	if($resultado){
 		$dados = mysqli_fetch_array($resultado);
@@ -35,7 +35,7 @@ if(isset($_GET['id']) && $_GET['id'] != ""){
 		<form class="formulario" method="post" action="mensagens.php" align=left> 
 			<p> cadastre um preenchendo o formulário abaixo</p>
 
-			<input type="hidden" name="id" value="<?php echo $id; ?>">
+			<input type="hidden" name="id_do_quarto" value="<?php echo $id_do_quarto; ?>">
 
 			<div class="field">
 				<label for="n_da_porta">numero do quarto</label>
