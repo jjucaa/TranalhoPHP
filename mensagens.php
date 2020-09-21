@@ -17,7 +17,7 @@
 			";
 		}else{
 			$sql = "update quartos set n_da_porta = '$n_da_porta', tp_quarto = '$tp_quarto', vr_diaria = '$vr_diaria', status = '$status', id_do_quarto = '$id_do_quarto', alt_datahora = NOW()
-					where id = ".$id;
+					where id = ".$id_do_quarto;
 		}
 		
 		$resultado = mysqli_query($conexao, $sql);
@@ -47,15 +47,15 @@
     <meta charset="utf-8"/>
    </head>
 <body>
-    <h2 align=center> Mensagens Recebidas:</h2>
-    <p align=center> <a href="formulario.php">Cadastrar</a></p>
+    <h2 align=center> Quartos cadastrados:</h2>
+    <p align=center> <a href="inserir_dados.php">Cadastrar</a></p>
 
     <table border=1 width=80% align=center><tr>
-        <td><label for="nome">Nome:</label></td>
-        <td><label for="telefone">Telefone:</label></td>
-        <td><label for="email">E-Mail:</label></td>        
-        <td><span>Receber novidades?</span></td>
-        <td><label for="mensagem">Mensagem:</label></td>
+        <td><label for="id_do_quarto">ID:</label></td>
+        <td><label for="n_da_porta">N do quarto:</label></td>
+        <td><label for="tp_quarto">Tipo:</label></td>        
+        <td><span>Valor diaria</span></td>
+        <td><label for="Status">Status:</label></td>
         <td><label for="acoes">Ações</label></td>
     </tr>
 
@@ -81,6 +81,6 @@
 	?>
 
     </table>
-    <p align=center> <a href="formulario.php">Cadastrar</a></p>
+    <p align=center> <a href="inserir_dados.php">Cadastrar</a></p>
 </body>
 </html>
