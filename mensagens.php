@@ -13,11 +13,11 @@
 
 		if($id_do_quarto == ""){
 			$sql = "insert into quartos (n_da_porta, tp_quarto, vr_diaria, status, id_do_quarto)
-				values ('$n_da_porta', '$tp_quarto', '$vr_diaria', '$status', '$id_do_quarto', now(), '')
+				values ('$n_da_porta', '$tp_quarto', '$vr_diaria', '$status', '$id_do_quarto')
 			";
 		}else{
-			$sql = "update quartos set n_da_porta = '$n_da_porta', tp_quarto = '$tp_quarto', vr_diaria = '$vr_diaria', status = '$status', id_do_quarto = '$id_do_quarto', alt_datahora = NOW()
-					where id = ".$id_do_quarto;
+			$sql = "update quartos set n_da_porta = '$n_da_porta', tp_quarto = '$tp_quarto', vr_diaria = '$vr_diaria', status = '$status', id_do_quarto = '$id_do_quarto'
+					where id_do_quarto = ".$id_do_quarto;
 		}
 		
 		$resultado = mysqli_query($conexao, $sql);
